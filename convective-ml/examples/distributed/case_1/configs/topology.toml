@@ -1,0 +1,54 @@
+[[topology]]
+id = "Singular"
+nodes = 3
+
+# --- row 0 --- #
+
+[[topology.vertices]]
+from = 0
+to = 0
+weight = 0.0
+
+[[topology.vertices]]
+from = 0
+to = 1
+weight = 0.5
+
+[[topology.vertices]]
+from = 0
+to = 2
+weight = 0.5
+
+# --- row 1 --- #
+
+[[topology.vertices]]
+from = 1
+to = 0
+weight = 0.5
+
+[[topology.vertices]]
+from = 1
+to = 1
+weight = 0.0
+
+[[topology.vertices]]
+from = 1
+to = 2
+weight = 0.5
+
+# --- row 2 --- #
+
+[[topology.vertices]]
+from = 2
+to = 0
+weight = 0.5
+
+[[topology.vertices]]
+from = 2
+to = 1
+weight = 0.5
+
+[[topology.vertices]]
+from = 2
+to = 2
+weight = 0.0

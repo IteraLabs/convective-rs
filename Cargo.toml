@@ -29,6 +29,12 @@ include = ["katex-header.html"]
 
 [workspace.dependencies]
 clap = { version = "4.5", features = ["derive"] }
+convective_data = { path = "./convective-data", version = "0.0.10" }
+convective_graph = { path = "./convective-graph", version = "0.0.10" }
+convective_ml = { path = "./convective-ml", version = "0.0.10" }
+convective_opers = { path = "./convective-opers", version = "0.0.10" }
+convective_quant = { path = "./convective-quant", version = "0.0.10" }
+convective_synth = { path = "./convective-synth", version = "0.0.10" }
 criterion = { version = "0.5", features = ["html_reports"] }
 csv = { version = "1.3" }
 futures = { version = "0.3" }

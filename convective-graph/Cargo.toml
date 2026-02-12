@@ -1,0 +1,63 @@
+[package]
+name = "convective_graph"
+version = "0.0.10"
+edition = "2024"
+rust-version = "1.85.0"
+description = "Spectral and Graph Theory For the convective-rs framework"
+documentation = "https://docs.rs/convective-graph/"
+readme = "README.md"
+homepage = "https://iteralabs.xyz/convective-graph"
+repository = "https://github.com/iteralabs/convective-graph"
+license = "Apache-2.0"
+keywords = ["crypto", "framework", "machine-learning", "math", "trading"]
+categories = ["data-structures", "development-tools", "finance", "simulation"]
+exclude = ["*.log", ".github", "Makefile.toml", "assets/*", "tags"]
+include = ["../katex-header.html", "Cargo.toml", "README.md", "src/**/*"]
+publish = true
+
+[package.metadata.docs.rs]
+rustdoc-args = ["--html-in-header", "katex-header.html"]
+private-doc = true
+license = "Apache-2.0"
+
+[lib]
+name = "convective_graph"
+path = "src/lib.rs"
+
+[dependencies]
+anyhow = { version = "1.0" }
+arrow = { version = "57.2", optional = true }
+async-rate-limiter = { version = "1.0", features = ["rt-tokio"] }
+async-trait = { version = "0.1" }
+chrono = { version = "0.4", features = ["serde"] }
+config = { version = "0.13" }
+csv = { workspace = true }
+futures-util = { version = "0.3" }
+hex = { version = "0.4" }
+hmac = { version = "0.12" }
+parquet = { version = "57.2", optional = true }
+rand = { workspace = true }
+reqwest = { workspace = true }
+rust_decimal = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+sha2 = { version = "0.10" }
+tch = { version = "0.20.0", optional = true }
+thiserror = { workspace = true }
+tokio = { workspace = true }
+tokio-tungstenite = { version = "0.21", features = ["native-tls"] }
+toml = { workspace = true }
+tracing = { version = "0.1" }
+tracing-subscriber = { version = "0.3" }
+url = { version = "2.0" }
+uuid = { version = "1.0", features = ["v4"] }
+
+[lints.rust]
+trivial_casts = "warn"
+trivial_numeric_casts = "warn"
+unexpected_cfgs = { level = "warn", check-cfg = ["cfg(nightly)"] }
+unreachable_code = "deny"
+unreachable_patterns = "deny"
+unsafe_code = "forbid"
+unused_extern_crates = "allow"
+unused_variables = "warn"

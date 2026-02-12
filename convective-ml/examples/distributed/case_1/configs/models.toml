@@ -1,0 +1,17 @@
+[[models]]
+id = "Distrubted_Gradient_Descent"
+
+# ----------------------------------------------------------- Distributed Optimizer -- //
+
+[[models.consensus]]
+id = "dgd_global"
+description = "Gradient Descent"
+params_labels = ["learning_rate", "epsilon"]
+params_values = [0.1, 0.001]
+
+# ---------------------------------------------------------- Forecasting Volatility -- //
+
+[[models.forecasting]]
+id = "logistic_regression"
+description = "singular logistic regression"
+

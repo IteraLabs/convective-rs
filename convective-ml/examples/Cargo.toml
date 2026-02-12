@@ -1,0 +1,65 @@
+[package]
+name = "example"
+version = "0.0.1"
+edition = "2024"
+rust-version = "1.85.0"
+description = "Research and implementation examples for the atelier-rs engine"
+documentation = "https://docs.rs/atelier-rs/"
+readme = "README.md"
+homepage = "https://iteralabs.xyz/atelier-rs"
+repository = "https://github.com/iteralabs/atelier-rs"
+license = "Apache-2.0"
+keywords = ["crypto", "framework", "machine-learning", "math", "trading"]
+categories = ["data-structures", "development-tools", "finance", "simulation"]
+exclude = ["*.log", ".github", "Makefile.toml", "assets/*", "tags"]
+include = ["../katex-header.html", "Cargo.toml", "README.md", "src/**/*"]
+publish = false
+
+[package.metadata.docs.rs]
+private-doc = true
+
+[[example]]
+name = "basic_order"
+path = "quickstart/basic_order.rs"
+
+[[example]]
+name = "basic_ob"
+path = "quickstart/basic_ob.rs"
+
+[[example]]
+name = "basic_ob_progressions"
+path = "quickstart/basic_ob_progressions.rs"
+
+[[example]]
+name = "distributed_case_1_train"
+path = "distributed/case_1/train.rs"
+
+[dependencies]
+anyhow = { version = "1.0" }
+atelier_data = { path = "../atelier-data", version = "0.0.12" }
+convective_data = { path = "../convective-data", version = "0.0.10" }
+convective_synth = { path = "../convective-synth", version = "0.0.10" }
+chrono = { version = "0.4", features = ["serde"] }
+criterion = { version = "0.5", features = ["html_reports"] }
+human_bytes = { version = "0.4.1" }
+memuse = { version = "0.2.0" }
+rand = { version = "0.9.0" }
+rand_distr = { version = "0.5.0" }
+tch = { version = "0.20.0", optional = true }
+tokio = { version = "1", features = ["full"] }
+tracing = { version = "0.1" }
+tracing-subscriber = { version = "0.3" }
+
+[features]
+default = []
+torch = ["atelier_data/torch", "dep:tch"]
+
+[lints.rust]
+trivial_casts = "warn"
+trivial_numeric_casts = "warn"
+unexpected_cfgs = { level = "warn", check-cfg = ["cfg(nightly)"] }
+unreachable_code = "deny"
+unreachable_patterns = "deny"
+unsafe_code = "forbid"
+unused_extern_crates = "allow"
+unused_variables = "warn"

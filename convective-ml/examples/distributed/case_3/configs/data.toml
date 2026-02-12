@@ -1,0 +1,16 @@
+[[data]]
+id = "DCML Data"
+datasets = 3
+
+[[data.set.1]]
+file_name = "bybit_orderbooks"
+format = "parquet"
+
+[[data.set.2]]
+file_name = "coinbase_orderbooks"
+format = "parquet"
+
+[[data.set.3]]
+file_name = "kraken_orderbooks"
+format = "parquet"
+

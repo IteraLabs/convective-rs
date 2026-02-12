@@ -1,0 +1,7 @@
+[[data]]
+id = "DCML Data"
+datasets = 3
+
+[[data.set.1]]
+file_name = "bybit_orderbooks"
+format = "parquet"

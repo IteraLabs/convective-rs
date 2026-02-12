@@ -1,0 +1,98 @@
+[[experiments]]
+id = "case_3"
+n_progressions = 100
+n_agents = 3
+
+# ----------------------------------------------------------- Distributed Optimizer -- //
+
+[[models]]
+id = "optimizer_00"
+label = "GD"
+description = "Gradient Descent"
+params_labels = ["learning_rate", "epsilon"]
+params_values = [0.1, 0.001]
+
+# ---------------------------------------------------- Orderbook Progression Models -- //
+
+[[models]]
+id = "mod_ai_00"
+label = "GBM"
+description = "Geometric Brownian Motion"
+params_labels = ["mu", "sigma"]
+params_values = [0.01, 0.001]
+
+[[models]]
+id = "mod_eu_00"
+label = "GBM"
+description = "Geometric Brownian Motion"
+params_labels = ["mu", "sigma"]
+params_values = [0.01, 0.001]
+
+[[models]]
+id = "mod_am_00"
+label = "GBM"
+description = "Geometric Brownian Motion"
+params_labels = ["mu", "sigma"]
+params_values = [0.01, 0.001]
+
+# ----------------------------------------------------------------- Features Models -- //
+
+[[features]]
+id = "ob_features_00"
+label = "OB"
+description = "Orderbook Features"
+params_labels = ["depth", "bps"]
+params_values = [25, 1.5]
+
+# ---------------------------------------------------------- Orderbook Progressions -- //
+
+[[exchanges]]
+id = "ai_00"
+region = "asia"
+name = "binance"
+category = "cex"
+
+[exchanges.orderbook]
+update_freq = 50
+bid_price = 100_000.00
+bid_levels = [25, 50]
+bid_orders = [10, 30]
+ticksize = [0.1, 1.0]
+ask_price = 100_001.00
+ask_levels = [25, 60]
+ask_orders = [10, 20]
+rands = [-0.01, 0.01]
+
+[[exchanges]]
+id = "eu_00"
+region = "europe"
+name = "kraken"
+category = "cex"
+
+[exchanges.orderbook]
+update_freq = 50
+bid_price = 100_000.00
+bid_levels = [25, 50]
+bid_orders = [8, 14]
+ticksize = [2.0, 3.5]
+ask_price = 100_001.00
+ask_levels = [25, 50]
+ask_orders = [9, 14]
+rands = [-0.01, 0.01]
+
+[[exchanges]]
+id = "am_00"
+region = "americas"
+name = "bitso"
+category = "cex"
+
+[exchanges.orderbook]
+update_freq = 50
+bid_price = 100_000.00
+bid_levels = [25, 50]
+bid_orders = [15, 20]
+ticksize = [4.5, 9.0]
+ask_price = 100_001.00
+ask_levels = [25, 50]
+ask_orders = [15, 25]
+rands = [-0.01, 0.01]
